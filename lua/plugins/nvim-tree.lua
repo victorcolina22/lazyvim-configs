@@ -11,9 +11,18 @@ return {
     vim.cmd([[:hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
 
     nvimtree.setup({
+      -- disable_netrw = true,
+      -- hijack_netrw = true,
+      -- hijack_cursor = true,
+      update_cwd = true,
+      update_focused_file = {
+        enable = true,
+        update_cwd = true,
+        ignore_list = {},
+      },
       view = {
         side = "right",
-        relativenumber = true,
+        relativenumber = false,
         adaptive_size = true,
       },
       renderer = {
@@ -32,7 +41,7 @@ return {
       actions = {
         open_file = {
           window_picker = {
-            enable = true,
+            enable = false,
           },
         },
       },

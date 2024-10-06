@@ -28,6 +28,11 @@ return {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         tsserver = {},
         eslint = {},
+        tailwindcss = {
+          root_dir = function(...)
+            return require("lspconfig.util").root_pattern(".git")(...)
+          end,
+        },
       },
       setup = {
         tsserver = function(_, opts)
